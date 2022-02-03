@@ -12,7 +12,7 @@ import org.junit.*;
 public class MarkdownParseTest {
     @Test
     public void addition() {
-        assertEquals(2, 2 + 1);
+        assertEquals(2, 1 + 1);
     }
     @Test
     public void basicTest() throws IOException{
@@ -32,6 +32,11 @@ public class MarkdownParseTest {
         @Test
         public void imageTest() throws IOException{
                 assertEquals(List.of(), MarkdownParse.getLinks(Files.readString(Path.of("imageTest.md"))));
+        }
+	
+	 @Test
+        public void escapeTest() throws IOException{
+                assertEquals(List.of(), MarkdownParse.getLinks(Files.readString(Path.of("test2.md"))));
         }
 
 
