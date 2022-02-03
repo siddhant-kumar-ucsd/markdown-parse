@@ -20,7 +20,7 @@ public class MarkdownParse {
 	    if(escapeCharacter_start != -1){
 		int escape_char_counter = 0;
 		for(int i = escapeCharacter_start; i<markdown.length(); i++){
-		     if(str(markdown.charAt(i)).equals("\\")){
+		     if(String.valueOf(markdown.charAt(i)).equals("\\")){
 		     	escape_char_counter++;
 		     }
 		}
