@@ -16,6 +16,18 @@ public class MarkdownParse {
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
             int openParen = markdown.indexOf("(", nextCloseBracket);
             int closeParen = markdown.indexOf(")", openParen);
+	    int escapeCharacter_start = markdown.indexOf("\");
+	    if(escapeCharacter_start != -1){
+		int escape_char_counter = 0;
+		for(int i = escapeCharacter_start; i<markdown.length(); i++){
+		     if(markdown.charAt(i) == "\"){
+		     	escape_char_counter++;
+		     }
+		}
+		if(escape_char_counter%2 != 0){
+			return toReturn;
+		}
+	    }
             if(nextOpenBracket == -1 || nextCloseBracket == -1 || openParen == -1 || closeParen == -1){
                 return toReturn;
             }
