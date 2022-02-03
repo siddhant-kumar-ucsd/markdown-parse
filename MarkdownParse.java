@@ -16,7 +16,7 @@ public class MarkdownParse {
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
             int openParen = markdown.indexOf("(", nextCloseBracket);
             int closeParen = markdown.indexOf(")", openParen);
-	    int escapeCharacter_start = markdown.indexOf("\");
+	    int escapeCharacter_start = markdown.indexOf("\\");
 	    if(escapeCharacter_start != -1){
 		int escape_char_counter = 0;
 		for(int i = escapeCharacter_start; i<markdown.length(); i++){
