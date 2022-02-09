@@ -1,0 +1,1 @@
+[a link]something().com

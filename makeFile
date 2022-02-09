@@ -1,0 +1,11 @@
+MarkdownParse.class: MarkdownParse.java
+	javac MarkdownParse.java
+
+MarkdownParseTest.class: MarkdownParse.java MarkdownParse.class
+	javac MarkdownParseTest.java
+	java MarkdownParseTest
+
+test: MarkdownParse.java MarkdownParse.class
+	javac MarkdownParseTest.java
+	java MarkdownParseTest
+
