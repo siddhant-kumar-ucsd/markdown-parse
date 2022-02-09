@@ -33,24 +33,12 @@ public class MarkdownParseTest {
         assertEquals(List.of("https://something.com","some-page.html"), MarkdownParse.getLinks(contents));
     }
 
-<<<<<<< HEAD
     @Test
     public void getLinksTest3() throws IOException{
         Path fileName = Path.of("test-file3.md");
         String contents = Files.readString(fileName);
         assertEquals(List.of("https://[]something.com","some-page.html"), MarkdownParse.getLinks(contents));
     }
-=======
-        @Test
-        public void imageTest() throws IOException{
-                assertEquals(List.of(), MarkdownParse.getLinks(Files.readString(Path.of("imageTest.md"))));
-        }
-	
-	 @Test
-        public void escapeTest() throws IOException{
-                assertEquals(List.of(), MarkdownParse.getLinks(Files.readString(Path.of("test2.md"))));
-        }
->>>>>>> cda7257c910a577229e9c0c598e1b3dcfe2efd2f
 
     @Test
     public void getLinksTest4() throws IOException{

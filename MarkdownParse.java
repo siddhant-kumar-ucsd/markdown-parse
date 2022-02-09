@@ -14,7 +14,7 @@ public class MarkdownParse {
         //if so, add the solely the link into the return ArrayList
         for(String s: contentsArray){
             if(isOfLinkForm(s))
-                toReturn.add(s.substring(s.indexOf("(")+1, s.lastIndexOf(")")));
+                toReturn.add(s.substring(s.indexOf("](")+2, s.lastIndexOf(")")));
                 //using lastIndexOf() to fix a whitespace issue (I think) on
                 //windows
         }
@@ -29,32 +29,7 @@ public class MarkdownParse {
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
             int openParen = markdown.indexOf("(", nextCloseBracket);
             int closeParen = markdown.indexOf(")", openParen);
-<<<<<<< HEAD
             toReturn.add(markdown.substring(openParen + 1, closeParen));
-=======
-	    int escapeCharacter_start = markdown.indexOf("\\");
-	    if(escapeCharacter_start != -1){
-		int escape_char_counter = 0;
-		for(int i = escapeCharacter_start; i<markdown.length(); i++){
-		     if(String.valueOf(markdown.charAt(i)).equals("\\")){
-		     	escape_char_counter++;
-		     }
-		}
-		if(escape_char_counter%2 != 0){
-			return toReturn;
-		}
-	    }
-            if(nextOpenBracket == -1 || nextCloseBracket == -1 || openParen == -1 || closeParen == -1){
-                return toReturn;
-            }
-            if((nextOpenBracket != 0  && markdown.charAt(nextOpenBracket - 1) == '!')
-                || (openParen != nextCloseBracket + 1)){
-                validLink = false;
-            }
-            if(validLink) {
-                toReturn.add(markdown.substring(openParen + 1, closeParen));
-            }
->>>>>>> cda7257c910a577229e9c0c598e1b3dcfe2efd2f
             currentIndex = closeParen + 1;
         }
         //*/
